@@ -5,9 +5,180 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2020년을 보내며...</title>
+
+    <!-- html미리보기 파일 -->
+    <meta property="og:image"
+      content="https://www.buckinghamtahoerentals.com/wp-content/uploads/2018/12/christmas-800x400.jpg">
+    <meta property="og:title" content="재현이의 카드">
+    <meta property="og:description" content="2020을 추억하며">
+
+    <!-- favicon넣기 -->
+    <link rel="shortcut icon"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHr65JZOVo0zdk3sAXEfKXGUBE58tpCdXVUg&usqp=CAU">
+
+    <!-- 눈오는효과 -->
+    <!-- https://www.cssscript.com/minimalist-falling-snow-effect-with-pure-javascript-snow-js/ -->
+    <script src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/snow.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+    <style>
+      * {
+        font-family: 'Poor Story', cursive;
+      }
+
+      body {
+        /* 색좋다 */
+        background-color: #9b070f;
+      }
+
+      .envelope {
+
+        width: 200px;
+        height: 200px;
+
+        /* 
+        다양한 르탄이 이미지
+        https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/Webp.net-gifmaker.gif
+        https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/Webp.net-gifmaker+(1).gif
+        https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/Webp.net-gifmaker+(2).gif
+         */
+        background-image: url(https://pngimg.com/uploads/envelope/envelope_PNG18366.png);
+
+        background-size: cover;
+        background-position: center;
+
+        margin: 200px auto 0 auto;
+
+        /* 마우스가 닿으면 커서모양이 변함 */
+        cursor: pointer;
+      }
+
+      .envelope-msg {
+        color: white;
+        text-align: center;
+
+      }
+
+      .letter-close {
+        display: block;
+      }
+
+      .letter-open {
+        display: none;
+      }
+
+      .rtan {
+        background-color: white;
+
+        width: 200px;
+        height: 200px;
+
+        background-image: url(https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/rtan.gif);
+        background-position: center;
+        background-size: cover;
+
+        margin: 100px auto 0px auto;
+
+        /* 가로의 반정도 */
+        border-radius: 100px;
+
+        border: 5px solid white;
+        /* 얼마나 뿌옇게 할 것인가 */
+        box-shadow: 0px 0px 10px 0 white;
+
+      }
+
+      h1 {
+        color: white;
+        text-align: center;
+
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+
+      .messagebox {
+        background-color: ivory;
+
+        width: 400px;
+        margin: auto;
+
+        color: brown;
+
+        padding: 30px;
+
+        font-size: 20px;
+        /* 글자 간격 */
+        line-height: 30px;
+
+        box-shadow: 0px 0px 10px 0 white;
+      }
+
+      .from {
+        text-align: right;
+        margin-bottom: 0px;
+      }
+
+      /* 760보다 작을때만 작동(모바일 최적화) */
+      @media screen and (max-width: 760px) {
+        .messagebox {
+          width: 300px;
+          padding: 20px;
+        }
+
+        .rtan {
+          width: 150px;
+          height: 150px;
+          margin: 70px auto 0px auto;
+
+        }
+
+        h1 {
+          font-size: 28px
+        }
+
+        .envelope {
+          margin: 150px auto 0 auto;
+        }
+      }
+    </style>
+
+    <script>
+      function open_letter() {
+        document.getElementsByClassName("letter-close")[0].style.display = 'none'
+        document.getElementsByClassName("letter-open")[0].style.display = 'block'
+      }
+
+      function go_rtan() {
+        alert('앗, 어떻게 찾았지!?');
+        window.location.href = 'https://spartacodingclub.kr?f_name=%EB%B0%98%EC%9E%AC%ED%98%84&f_uid=5fe456827bf262499b56b1a9';
+      }
+
+    </script>
+
+
   </head>
 
   <body>
+    <div class="letter-close">
+      <div class="envelope" onclick="open_letter()"></div>
+      <h2 class="envelope-msg">봉투를 열어봐!</h2>
+    </div>
+
+    <div class="letter-open">
+      <div class="rtan" onclick="go_rtan()"></div>
+      <h1>2020년 수고 많았어!</h1>
+      <div class="messagebox">
+        친구들에게. <br />
+        올해 이런저런 일이 많았는데 <br />
+        너희 덕분에 하나도 힘들지 않았어 <br />
+        내년에도 우리 우정 변치말자 <br />
+        연말에 다 같이 못 봐서 아쉽다 <br />
+        <p class="from">2020.12.31 재현이가</p>
+      </div>
+
+    </div>
+
 
   </body>
 
